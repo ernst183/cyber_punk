@@ -61,3 +61,18 @@ TEST(DeckSetUp, Discard) {
   ASSERT_EQ(deck.discard_size(), 1);
   ASSERT_EQ(deck.discard_pile()[0].damage(), 10);
 }
+
+TEST(Player, Hand) {
+  characters::Player player;
+  player.add_card_to_hand(cards::Card(50, 50));
+  ASSERT_EQ(player.hand_size(), 1);
+}
+
+TEST(Player, HandWithPlayedCard) {
+  characters::Player player;
+  player.add_card_to_hand(cards::Card(50, 0));
+  player.add_card_to_hand(cards::Card(30, 30));
+  player.play_card(0, player);
+  ASSERT_EQ(player.hand_size(), 1);
+  ASSERT_EQ(player.health(), 50);
+}

@@ -19,18 +19,42 @@
     <Filter Include="Source Files\Characters">
       <UniqueIdentifier>{e5fdd5b1-f650-472b-a1fc-48c46a4376c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Cards">
+      <UniqueIdentifier>{0211d507-c595-4663-8814-030e6f3a7933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cards">
+      <UniqueIdentifier>{02c4abe6-4f62-4cc2-9124-818afc551f43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Characters\Player.h">
-      <Filter>Header Files\Characters</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="src\Characters\Character.cpp">
+      <Filter>Source Files\Characters</Filter>
+    </ClCompile>
     <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cards\Card.cpp">
+      <Filter>Source Files\Cards</Filter>
     </ClCompile>
     <ClCompile Include="src\Characters\Player.cpp">
       <Filter>Source Files\Characters</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cards\Deck.cpp">
+      <Filter>Source Files\Cards</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Characters\Character.h">
+      <Filter>Header Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Cards\Card.h">
+      <Filter>Header Files\Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Characters\Player.h">
+      <Filter>Header Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Cards\Deck.h">
+      <Filter>Header Files\Cards</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

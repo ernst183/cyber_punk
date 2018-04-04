@@ -11,7 +11,7 @@ namespace cards {
   }
 
   void Deck::add_card_to_deck(Card&& card) {
-    deck_.push_back(card);
+    deck_.push_front(card);
   }
 
   void Deck::add_card_to_discard(Card&& card) {

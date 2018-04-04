@@ -10,8 +10,8 @@ public:
     , healing_(healing)
   {}
 
-  virtual int damage() const { return damage_; }
-  virtual int healing() const { return healing_; }
+  int damage() const { return damage_; }
+  int healing() const { return healing_; }
   ///virtual Effects effects() = 0; // TODO: Add effects to cards
 
 private:

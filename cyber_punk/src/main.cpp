@@ -4,13 +4,19 @@
 #include "include/Characters/Player.h"
 
 int main(int argc, char* argv[]) {
-  // Create Player
   characters::Player player;
-  player.draw();
-  player.draw();
-  player.play_card(0, player);
-  std::cout << player;
-  player.play_card(0, player);
-  std::cout << player;
-  std::cin.get();
+  while (!player.dead()) {
+    characters::Character monster(100);
+    while (!monster.dead()) {
+      player.add_card_to_hand(cards::Card(0, 20));
+      player.add_card_to_hand(cards::Card(50, 0));
+      player.play_card(0, monster);
+      std::cout << monster;
+      player.play_card(0, monster);
+      std::cout << monster;
+      std::cin.get();
+    }
+    std::cout << "Killed monster!\n";
+  }
+
 }

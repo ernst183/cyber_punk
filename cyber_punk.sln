@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cyber_punk", "cyber_punk\cyber_punk.vcxproj", "{7C05F038-161D-4473-9AC4-1A9095D5F495}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unit_tests", "unit_tests\unit_tests.vcxproj", "{044B81B9-E542-4038-B99F-9811EAF0BC54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{7C05F038-161D-4473-9AC4-1A9095D5F495}.Release|x64.Build.0 = Release|x64
 		{7C05F038-161D-4473-9AC4-1A9095D5F495}.Release|x86.ActiveCfg = Release|Win32
 		{7C05F038-161D-4473-9AC4-1A9095D5F495}.Release|x86.Build.0 = Release|Win32
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Debug|x64.ActiveCfg = Debug|x64
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Debug|x64.Build.0 = Debug|x64
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Debug|x86.ActiveCfg = Debug|Win32
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Debug|x86.Build.0 = Debug|Win32
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Release|x64.ActiveCfg = Release|x64
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Release|x64.Build.0 = Release|x64
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Release|x86.ActiveCfg = Release|Win32
+		{044B81B9-E542-4038-B99F-9811EAF0BC54}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

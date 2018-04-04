@@ -20,14 +20,6 @@ namespace characters {
     max_health_ += amount;
     health_ += amount;
   }
-  void Character::increase_max_energy(int amount) {
-    max_energy_ += amount;
-    energy_ += amount;
-  }
-
-  void Character::reset_energy() {
-    energy_ = max_energy_;
-  }
 
   void Character::resolve_card(const cards::Card& card) {
     damage(card.damage());

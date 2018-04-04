@@ -16,7 +16,7 @@ public:
     : deck_(std::move(cards))
   {}
 
-  int deck_size() const { return deck_.size(); }
+  int size() const { return deck_.size(); }
   int discard_size() const { return discard_.size(); }
 
   std::deque<Card> deck() const { return deck_; }

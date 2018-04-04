@@ -2,7 +2,7 @@
 #define DECK_H
 
 #include <vector>
-#include <stack>
+#include <deque>
 
 #include "include/Cards/Card.h"
 
@@ -10,26 +10,28 @@ namespace cards {
 
 class Deck {
 public:
-  Deck(std::stack<Card>&& cards)
-    : cards_(std::move(cards))
+  Deck() {}
+
+  Deck(std::deque<Card>&& cards)
+    : deck_(std::move(cards))
   {}
 
-  int deck_size() const { return cards_.size(); }
+  int deck_size() const { return deck_.size(); }
   int discard_size() const { return discard_.size(); }
 
-  Card draw() { 
-    Card card = cards_.top();
-    cards_.pop();
-    return card;
-  }
+  std::deque<Card> deck() const { return deck_; }
+  std::deque<Card> discard_pile() const { return discard_; }
 
-  void discard(Card&& card) {
-    discard_.push(std::move(card));
-  }
+  Card draw();
+  void add_card_to_deck(Card&& card);
+  void add_card_to_discard(Card&& card);
+  void shuffle_discard();
+  void shuffle_deck();
 
 private:
-  std::stack<Card> cards_;
-  std::stack<Card> discard_;
+  std::deque<Card> deck_;
+  std::deque<Card> discard_;
+
 };
 
 }

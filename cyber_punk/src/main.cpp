@@ -6,21 +6,11 @@
 int main(int argc, char* argv[]) {
   // Create Player
   characters::Player player;
-  
-  // Create Cards
-  cards::Card damage_card{ 60, 0 };
-  cards::Card healing_card{ 0, 20 };
-
-  // Damage, heal, and damage player, then test for death
+  player.draw();
+  player.draw();
+  player.play_card(0, player);
   std::cout << player;
-  player.resolve_card(damage_card);
+  player.play_card(0, player);
   std::cout << player;
-  std::cout << player.dead() << '\n';
-  player.resolve_card(healing_card);
-  std::cout << player;
-  std::cout << player.dead() << '\n';
-  player.resolve_card(damage_card);
-  std::cout << player;
-  std::cout << player.dead() << '\n';
-  std::cin.get();  
+  std::cin.get();
 }

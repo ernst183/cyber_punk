@@ -30,9 +30,6 @@
     <ClCompile Include="src\Characters\Character.cpp">
       <Filter>Source Files\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Cards\Card.cpp">
       <Filter>Source Files\Cards</Filter>
     </ClCompile>

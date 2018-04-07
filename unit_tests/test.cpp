@@ -2,10 +2,12 @@
 
 namespace {
   effects::effect_function DAMAGE_50 = effects::make_damage_effect(50);
+  effects::effect_function DAMAGE_10 = effects::make_damage_effect(10);
   effects::effect_function HEAL_20 = effects::make_healing_effect(20);
   effects::effect_function DRAW = effects::draw_a_card;
 
   cards::Card DAMAGE_CARD({ DAMAGE_50 });
+  cards::Card SMALL_DAMAGE_CARD({ DAMAGE_10 });
   cards::Card HEAL_CARD({ HEAL_20 });
   cards::Card DAMAGE_HEAL_CARD({ DAMAGE_50, HEAL_20 });
 }
@@ -125,4 +127,13 @@ TEST(Effects, DrawACard) {
   ASSERT_EQ(player.hand_size(), 1);
   player.play_card(0, player);
   ASSERT_EQ(player.health(), 50);
+}
+
+TEST(Effects, VulnerabilityExposed) {
+  characters::Player player;
+  player.add_effect_modifier(std::make_shared<effects::VulnerabilityExposed>(1));
+  player.add_card_to_hand(cards::Card{ SMALL_DAMAGE_CARD });
+  player.play_card(0, player);
+  ASSERT_EQ(player.health(), 80);
+
 }

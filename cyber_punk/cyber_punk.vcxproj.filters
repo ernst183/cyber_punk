@@ -44,6 +44,9 @@
     <ClCompile Include="src\Effects\Effects.cpp">
       <Filter>Source Files\Effects</Filter>
     </ClCompile>
+    <ClCompile Include="src\Effects\EffectModification.cpp">
+      <Filter>Source Files\Effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Characters\Character.h">
@@ -62,6 +65,9 @@
       <Filter>Header Files\Cards</Filter>
     </ClInclude>
     <ClInclude Include="include\Effects\Effects.h">
+      <Filter>Header Files\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Effects\EffectModification.h">
       <Filter>Header Files\Effects</Filter>
     </ClInclude>
   </ItemGroup>

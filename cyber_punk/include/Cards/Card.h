@@ -1,23 +1,27 @@
 #ifndef CARDS_H
 #define CARDS_H
 
+#include <functional>
+#include <vector>
+
+#include "include/Cards/CardEffect.h"
+
 namespace cards {
  
-class Card {
-public:
-  Card(int damage, int healing)
-    : damage_(damage)
-    , healing_(healing)
-  {}
+  class Card {
+  public:
+    Card(const std::vector<CardEffect>& effects)
+      : effects_(effects)
+    {}
 
-  int damage() const { return damage_; }
-  int healing() const { return healing_; }
-  ///virtual Effects effects() = 0; // TODO: Add effects to cards
+    const std::vector<CardEffect>& effects() { return effects_; }
 
-private:
-  int damage_;
-  int healing_;
-};
+    void resolve_effects(characters::Character& character) const;
+    void resolve_effects(std::vector<characters::Character>& character) const;
+
+  private:
+    std::vector<CardEffect> effects_;
+  };
 
 } // cards
 

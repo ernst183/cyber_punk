@@ -1,8 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "include/Characters/Character.h"
 #include "include/Cards/Deck.h"
+#include "include/Characters/Character.h"
 
 namespace characters {
   
@@ -41,7 +41,7 @@ public:
   // Discard the card at card_pos position in player hand
   void discard(int card_pos);
 
-  // Play card at card_pos position in player hand on Character character
+  // Play card at card_pos position in player hand on Character character or Player player
   void play_card(int card_pos, Character& character);
 
   // Here for debug purposes

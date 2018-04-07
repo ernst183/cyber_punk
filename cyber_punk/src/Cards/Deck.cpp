@@ -15,7 +15,7 @@ namespace cards {
   }
 
   void Deck::add_card_to_discard(Card&& card) {
-    discard_.push_back(card);
+    discard_.push_front(card);
   }
 
   void Deck::shuffle_discard() {

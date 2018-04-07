@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Characters">
       <UniqueIdentifier>{eb9ab394-21cf-45f5-964a-2827ae463444}</UniqueIdentifier>
     </Filter>
@@ -24,6 +20,12 @@
     </Filter>
     <Filter Include="Source Files\Cards">
       <UniqueIdentifier>{02c4abe6-4f62-4cc2-9124-818afc551f43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Effects">
+      <UniqueIdentifier>{905e3674-0f4b-42f2-a747-98233a273082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Effects">
+      <UniqueIdentifier>{64f9150b-4908-48eb-bbf5-5f93f23c6be3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +41,9 @@
     <ClCompile Include="src\Cards\Deck.cpp">
       <Filter>Source Files\Cards</Filter>
     </ClCompile>
+    <ClCompile Include="src\Effects\Effects.cpp">
+      <Filter>Source Files\Effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Characters\Character.h">
@@ -52,6 +57,12 @@
     </ClInclude>
     <ClInclude Include="include\Cards\Deck.h">
       <Filter>Header Files\Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Cards\CardEffect.h">
+      <Filter>Header Files\Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Effects\Effects.h">
+      <Filter>Header Files\Effects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

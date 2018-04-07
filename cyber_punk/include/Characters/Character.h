@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-#include <include/Cards/Card.h>
-
 namespace characters {
   
 class Character {
@@ -20,8 +18,6 @@ public:
 
   int health() const { return health_; }
   int max_health() const { return max_health_; }
-
-  void resolve_card(const cards::Card& card);
 
   bool dead() const { return health_ == 0; }
 

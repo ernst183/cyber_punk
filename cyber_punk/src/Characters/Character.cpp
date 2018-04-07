@@ -21,10 +21,4 @@ namespace characters {
     health_ += amount;
   }
 
-  void Character::resolve_card(const cards::Card& card) {
-    damage(card.damage());
-    heal(card.healing());
-  }
-
-
 } // namespace characters

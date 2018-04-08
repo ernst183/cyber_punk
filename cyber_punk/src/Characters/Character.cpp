@@ -15,7 +15,7 @@ namespace characters {
   void Character::damage(int amount) {
     if (amount > 0) {
       for (int i = 0; i < status_effects_.size(); ++i)
-        amount = status_effects_[i]->change_effect(amount, effects::EffectModification::Damage);
+        amount = status_effects_[i]->change_effect(amount, effects::EffectModification::TakeDamage);
       health_ = std::max(health_ - amount, 0);
     }
   }

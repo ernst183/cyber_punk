@@ -16,8 +16,8 @@ namespace cards {
 
     const std::vector<CardEffect>& effects() { return effects_; }
 
-    void resolve_effects(characters::Character& character) const;
-    void resolve_effects(std::vector<characters::Character>& character) const;
+    void resolve_effects(characters::Character& character, const std::vector<std::shared_ptr<effects::EffectModification>>& input_mods = {}) const;
+    void resolve_effects(std::vector<characters::Character>& character, const std::vector<std::shared_ptr<effects::EffectModification>>& input_mods = {}) const;
 
   private:
     std::vector<CardEffect> effects_;

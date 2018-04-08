@@ -12,10 +12,11 @@ public:
   };
 
   enum EffectType : uint16_t {
-    Damage = 0,
-    Defense = 1,
-    Healing = 2,
-    Draw = 3
+    DealDamage = 0,
+    TakeDamage = 1,
+    Defense = 2,
+    Healing = 3,
+    Draw = 4
   };
 
   EffectModification(StatusEffect effect)
@@ -40,7 +41,7 @@ public:
   {}
 
   int change_effect(int effect_amount, EffectType type) const { 
-    if (type == EffectType::Damage) {
+    if (type == EffectType::TakeDamage) {
       return effect_amount * 2;
     }
     else {
@@ -60,8 +61,8 @@ public:
   {}
 
   int change_effect(int effect_amount, EffectType type) const {
-    if (type == EffectType::Damage) {
-
+    if (type == EffectType::DealDamage) {
+      return effect_amount + amount_;
     }
   }
 

@@ -5,7 +5,7 @@ namespace effects {
     return [damage](characters::Character& character, const std::vector<std::shared_ptr<EffectModification>>& input_mods) { 
       int new_damage = damage;
       for (int i = 0; i < input_mods.size(); ++i) 
-        new_damage = input_mods[i]->change_effect(new_damage, EffectModification::Damage);        
+        new_damage = input_mods[i]->change_effect(new_damage, EffectModification::DealDamage);        
       character.damage(new_damage);
     };
   }
@@ -15,7 +15,7 @@ namespace effects {
       int new_healing = healing;
       for (int i = 0; i < input_mods.size(); ++i)
         new_healing = input_mods[i]->change_effect(new_healing, EffectModification::Healing);
-
+      
       character.heal(new_healing);
     };
   }
@@ -23,7 +23,7 @@ namespace effects {
   void damage_50_percent(characters::Character& character, const std::vector<std::shared_ptr<EffectModification>>& input_mods) {
     int new_damage = character.max_health() / 2;
     for (int i = 0; i < input_mods.size(); ++i) 
-      new_damage = input_mods[i]->change_effect(new_damage, EffectModification::Damage);
+      new_damage = input_mods[i]->change_effect(new_damage, EffectModification::DealDamage);
     character.damage(new_damage); 
   }
 

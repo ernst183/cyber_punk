@@ -116,7 +116,7 @@ TEST(Player, HandWithDiscardedCard) {
 }
 
 ////////////////////////////////////
-//CARD EFFECT TESTS
+//CARD EFFECT AND EFFECT MODIFICATION TESTS
 ////////////////////////////////////
 TEST(Effects, DrawACard) {
   characters::Player player;
@@ -154,4 +154,13 @@ TEST(Effects, StrengthAndVulnerability) {
   monster.add_effect_modifier(std::make_shared<effects::VulnerabilityExposed>(1));
   player.play_card(0, monster);
   ASSERT_EQ(monster.health(), 70);
+}
+
+TEST(Effects, Weak) {
+  characters::Player player;
+  player.add_effect_modifier(std::make_shared<effects::Weak>(5));
+  player.add_card_to_hand(cards::Card{ SMALL_DAMAGE_CARD });
+  characters::Character monster(100);
+  player.play_card(0, monster);
+  ASSERT_EQ(monster.health(), 95);
 }

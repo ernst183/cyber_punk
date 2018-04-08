@@ -8,7 +8,8 @@ public:
   enum StatusEffect : uint16_t {
     VulnerabilityExposed = 0,
     Lag                  = 1,
-    Strong               = 2
+    Strong               = 2,
+    Weak                 = 3
   };
 
   enum EffectType : uint16_t {
@@ -56,7 +57,7 @@ private:
 class Strong : public EffectModification {
 public:
   Strong(int amount)
-    :EffectModification(StatusEffect::Strong)
+    : EffectModification(StatusEffect::Strong)
     , amount_(amount)
   {}
 
@@ -69,6 +70,24 @@ public:
 private:
   int amount_;
 };
+
+class Weak : public EffectModification {
+public:
+  Weak(int turns)
+    : EffectModification(StatusEffect::Weak)
+    , turns_(turns)
+  {}
+
+  int change_effect(int effect_amount, EffectType type) const {
+    if (type == EffectType::DealDamage) {
+      return effect_amount / 2;
+    }
+  }
+
+private:
+  int turns_;
+};
+
 } // effects
 
 #endif // EFFECT_MODIFCATIONS_H

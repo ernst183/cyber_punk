@@ -37,7 +37,7 @@ public:
 
   // Draw a card from the player deck and put it in the player hand
   void draw(int cards) { 
-    for (int i = 0; i < status_effects_.size(); ++i)
+    for (size_t i = 0; i < status_effects_.size(); ++i)
       cards = status_effects_[i]->change_effect(cards, effects::EffectModification::Draw);
     for(int i = 0; i < cards; ++i) 
       hand_.push_back(deck_.draw()); 

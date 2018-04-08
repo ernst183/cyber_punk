@@ -16,7 +16,7 @@ namespace characters {
 
   void Player::play_card(int card_pos, Character& character) {
     const cards::Card& card = hand_[card_pos];
-    card.resolve_effects(character);
+    card.resolve_effects(character, status_effects_);
     discard(card_pos);
   }
 

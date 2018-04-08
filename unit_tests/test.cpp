@@ -135,5 +135,23 @@ TEST(Effects, VulnerabilityExposed) {
   player.add_card_to_hand(cards::Card{ SMALL_DAMAGE_CARD });
   player.play_card(0, player);
   ASSERT_EQ(player.health(), 80);
+}
 
+TEST(Effects, Strength) {
+  characters::Player player;
+  player.add_effect_modifier(std::make_shared<effects::Strong>(5));
+  player.add_card_to_hand(cards::Card{ SMALL_DAMAGE_CARD });
+  characters::Character monster(100);
+  player.play_card(0, monster);
+  ASSERT_EQ(monster.health(), 85);
+}
+
+TEST(Effects, StrengthAndVulnerability) {
+  characters::Player player;
+  player.add_effect_modifier(std::make_shared<effects::Strong>(5));
+  player.add_card_to_hand(cards::Card{ SMALL_DAMAGE_CARD });
+  characters::Character monster(100);
+  monster.add_effect_modifier(std::make_shared<effects::VulnerabilityExposed>(1));
+  player.play_card(0, monster);
+  ASSERT_EQ(monster.health(), 70);
 }

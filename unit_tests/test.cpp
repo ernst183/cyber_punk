@@ -53,7 +53,7 @@ TEST(DeckSetUp, DrawCards) {
 TEST(DeckSetUp, Shuffle) {
   cards::Deck deck1;
   cards::Deck deck2;
-  for (int i = 0; i < 1000; ++i) {
+  for (int i = 0; i < 100; ++i) {
     effects::effect_function damage_i = effects::make_damage_effect(i);
     deck1.add_card_to_deck(cards::Card({ damage_i }));
     deck2.add_card_to_deck(cards::Card({ damage_i }));
@@ -69,7 +69,7 @@ TEST(DeckSetUp, Shuffle) {
     if (test1.health() == test2.health())
       ++count;
   }
-  ASSERT_LT(count, 100);
+  ASSERT_LT(count, 10);
 }
 
 TEST(DeckSetUp, Discard) {

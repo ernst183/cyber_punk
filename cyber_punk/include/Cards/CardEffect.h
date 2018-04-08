@@ -8,16 +8,16 @@ namespace cards {
 
   class CardEffect {
   public:
-    CardEffect(std::function<void(characters::Character&)> effect)
+    CardEffect(std::function<void(characters::Character&, const std::vector<std::shared_ptr<effects::EffectModification>>&)> effect)
       : effect_(effect)
     {}
 
-    void resolve_effect(characters::Character& target) const {
-      effect_(target);
+    void resolve_effect(characters::Character& target, const std::vector<std::shared_ptr<effects::EffectModification>>& input_mods = {}) const {
+      effect_(target, input_mods);
     }
 
   private:
-    std::function<void(characters::Character&)> effect_;
+    std::function<void(characters::Character&, const std::vector<std::shared_ptr<effects::EffectModification>>&)> effect_;
   };
 
 } // cards

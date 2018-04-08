@@ -39,7 +39,7 @@ public:
     , turns_(turns)
   {}
 
-  virtual int change_effect(int effect_amount, EffectType type) const override { 
+  int change_effect(int effect_amount, EffectType type) const { 
     if (type == EffectType::Damage) {
       return effect_amount * 2;
     }
@@ -52,6 +52,22 @@ private:
   int turns_;
 };
 
+class Strong : public EffectModification {
+public:
+  Strong(int amount)
+    :EffectModification(StatusEffect::Strong)
+    , amount_(amount)
+  {}
+
+  int change_effect(int effect_amount, EffectType type) const {
+    if (type == EffectType::Damage) {
+
+    }
+  }
+
+private:
+  int amount_;
+};
 } // effects
 
 #endif // EFFECT_MODIFCATIONS_H

@@ -42,7 +42,7 @@ public:
     return os;
   }
 
-private:
+protected:
   int health_;
   int max_health_;
   std::vector<std::shared_ptr<effects::EffectModification>> status_effects_;
